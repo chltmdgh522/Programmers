@@ -8,8 +8,8 @@ public class Lotto {
         int[] lottos = {45, 4, 35, 20, 3, 9};
         int[] win_nums = {20, 9, 3, 45, 4, 35};
         Solution s = new Solution();
-        int[] answer = s.solution(lottos, win_nums);
-        for(int i = 0; i < answer.length; i++){
+        int[] answer=s.solution(lottos,win_nums);
+        for(int i=0; i<answer.length; i++){
             System.out.print(answer[i]);
         }
     }
