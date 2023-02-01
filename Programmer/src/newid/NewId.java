@@ -15,6 +15,9 @@ class Solution {
         new_id = new_id.toLowerCase();
         new_id = s1.twoSolution(new_id);
         new_id = s1.threeFourSolution(new_id);
+        new_id = s1.fiveSolution(new_id);
+        new_id = s1.sixSolution(new_id);
+        new_id = s1.finalSolution(new_id);
         return new_id;
     }
 
@@ -41,6 +44,21 @@ class Solution {
             new_id = new_id.substring(0, new_id.length() - 2);
         }
 
+        return new_id;
+    }
+
+    String fiveSolution(String new_id) {
+        if (new_id.length() == 0) {
+            new_id += "a";
+        }
+        return new_id;
+    }
+
+    String sixSolution(String new_id) {
+        return new_id;
+    }
+
+    String finalSolution(String new_id) {
         return new_id;
     }
 
