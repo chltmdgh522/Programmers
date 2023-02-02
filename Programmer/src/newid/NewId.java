@@ -22,14 +22,14 @@ class Solution {
     }
 
     String twoSolution(String new_id) {
-        String answer = "";
+        StringBuilder answer = new StringBuilder();
         for (int i = 0; i < new_id.length(); i++) {
             char a = new_id.charAt(i);
             if (a == '-' || a == '_' || a == '.' || a >= 48 && a <= 57 || a >= 97 && a <= 122) {
-                answer += a;
+                answer.append(a);
             }
         }
-        return answer;
+        return answer.toString();
     }
 
     String threeFourSolution(String new_id) {
@@ -74,9 +74,11 @@ class Solution {
 
     String finalSolution(String new_id) {
         if (new_id.length() <= 2) {
-            while (new_id.length() < 3) {
-                new_id += new_id.charAt(new_id.length() - 1);
+            StringBuilder new_idBuilder = new StringBuilder(new_id);
+            while (new_idBuilder.length() < 3) {
+                new_idBuilder.append(new_idBuilder.charAt(new_idBuilder.length() - 1));
             }
+            new_id = new_idBuilder.toString();
         }
         return new_id;
     }

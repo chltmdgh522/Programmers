@@ -1,7 +1,7 @@
 package pokemone;
 
-import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Set;
 
 public class Pokemone {
     public static void main(String[] args) {
@@ -14,19 +14,14 @@ public class Pokemone {
 
 class Solution {
     public int solution(int[] nums) {
-        int answer = 0;
-        HashSet hashSet = new HashSet<>();
+
+        Set<Integer> hashSet = new HashSet<>();
 
         for (int num : nums) {
             hashSet.add(num);
         }
         int size = nums.length / 2;
 
-        if (size <= hashSet.size()) {
-            answer = size;
-        } else if (size > hashSet.size()) {
-            answer = hashSet.size();
-        }
-        return answer;
+        return Math.min(size, hashSet.size());
     }
 }
