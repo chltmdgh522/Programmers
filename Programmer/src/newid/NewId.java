@@ -2,7 +2,7 @@ package newid;
 
 public class NewId {
     public static void main(String[] args) {
-        String new_id = "...!@BaT#*..y.abcdefghijklm";
+        String new_id = "123_.def";
         Solution s = new Solution();
         System.out.println(s.solution(new_id));
     }
@@ -37,28 +37,47 @@ class Solution {
             new_id = new_id.replace("..", ".");
         }
 
-        if (new_id.charAt(0) == '.') {
-            new_id = new_id.substring(1);
+        if (new_id.length() > 0) {
+            if (new_id.charAt(0) == '.') {
+                new_id = new_id.substring(1);
+            }
         }
-        if (new_id.charAt(new_id.length() - 1) == '.') {
-            new_id = new_id.substring(0, new_id.length() - 2);
+
+        if (new_id.length() > 0) {
+            if (new_id.charAt(new_id.length() - 1) == '.') {
+                new_id = new_id.substring(0, new_id.length() - 1);
+            }
         }
 
         return new_id;
     }
 
     String fiveSolution(String new_id) {
-        if (new_id.length() == 0) {
-            new_id += "a";
+        if (new_id.equals("")) {
+            new_id = "a";
         }
         return new_id;
     }
 
     String sixSolution(String new_id) {
+
+        if (new_id.length() >= 16) {
+            new_id = new_id.substring(0, 15);
+            for (int i = 0; i < new_id.length(); i++) {
+                if (new_id.charAt(new_id.length() - 1) == '.') {
+                    new_id = new_id.substring(0, new_id.length() - 1);
+                }
+            }
+        }
         return new_id;
     }
 
     String finalSolution(String new_id) {
+        if (new_id.length() <= 2) {
+            while (new_id.length() < 3) {
+                new_id += new_id.charAt(new_id.length() - 1);
+            }
+        }
         return new_id;
     }
 
