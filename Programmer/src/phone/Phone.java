@@ -7,6 +7,7 @@ public class Phone {
         Solution s = new Solution();
         System.out.print(s.solution("01033715386"));
     }
+
 }
 
 class Solution {
