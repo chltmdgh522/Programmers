@@ -24,6 +24,19 @@ class Solution {
                     return false;
 
         return true;
-         
+          /* int cnt = 0;
+        String a = phone_book[0];
+
+        for (int i = 0; i < phone_book.length; i++) {
+            if (Objects.equals(a, phone_book[i].substring(0, a.length()))) {
+                cnt++;
+                if (cnt == 2) {
+                    return false;
+
+                }
+            }
+        }
+        return true;
+   */
     }
 }
