@@ -15,15 +15,19 @@ public class SPY {
 
 class Solution {
     public int solution(String[][] clothes) {
-        int answer = 0;
+        int answer = 1;
         Map<String, Integer> hashMap = new HashMap<>();
         for (String[] s : clothes) {
-            String type = s[1];
-            hashMap.put(type, hashMap.getOrDefault(type, 0) + 1);
+            String cloth = s[1];
+            hashMap.put(s[1], hashMap.getOrDefault(s[1], 0) + 1);
+        }
+
+        Iterator<Integer> ir = hashMap.values().iterator();
+        while (ir.hasNext()) {
+            answer *= ir.next().intValue() + 1;
         }
 
 
-        System.out.println(hashMap);
-        return answer;
+        return answer - 1;
     }
 }
