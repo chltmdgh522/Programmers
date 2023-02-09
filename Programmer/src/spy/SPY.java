@@ -19,14 +19,13 @@ class Solution {
         Map<String, Integer> hashMap = new HashMap<>();
         for (String[] s : clothes) {
             String cloth = s[1];
-            hashMap.put(s[1], hashMap.getOrDefault(s[1], 0) + 1);
+            hashMap.put(s[1], hashMap.getOrDefault(s[1], 0)+1);
         }
 
         Iterator<Integer> ir = hashMap.values().iterator();
         while (ir.hasNext()) {
             answer *= ir.next().intValue() + 1;
         }
-
 
         return answer - 1;
     }
