@@ -1,7 +1,6 @@
 package marathon;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Objects;
 
@@ -9,8 +8,34 @@ public class Marathon {
     public static void main(String[] args) {
         String[] participant = {"choi", "kim", "kim"};
         String[] completion = {"kim", "choi"};
-        Solution s = new Solution();
+        Solution2 s = new Solution2();
         System.out.println(s.solution(participant, completion));
+    }
+}
+
+class Solution2 {
+    public String solution(String[] participant, String[] completion) {
+        String answer = "";
+        Map<String, Integer> hs = new HashMap<>();
+        for (String a : participant) {
+            hs.put(a, hs.getOrDefault(a, 0) + 1);
+        }
+
+        for (String c : completion) {
+            if (!hs.containsKey(c)) {
+                return c;
+            }
+            int value = hs.get(c);
+            hs.replace(c, value - 1);
+        }
+        for (String key : hs.keySet()) {
+            if (hs.get(key) > 0) {
+                return key;
+            }
+        }
+
+
+        return answer;
     }
 }
 
