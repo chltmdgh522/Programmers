@@ -14,6 +14,7 @@ public class BestAlbum {
         }
     }
 }
+
 class Solution {
     public int[] solution(String[] genres, int[] plays) {
         int[] answer = {};
