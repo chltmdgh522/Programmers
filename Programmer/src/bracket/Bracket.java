@@ -6,10 +6,9 @@ import java.util.Queue;
 
 public class Bracket {
     public static void main(String[] args) {
-        String s = "((((((()";
+        String s = "((((((()))))))()(()())((()))((())))))";
         Solution solution = new Solution();
         System.out.println(solution.solution(s));
-
     }
 }
 class Solution {
@@ -27,11 +26,12 @@ class Solution {
                     break;
                 }
             }
+
         }
         if(a==b){
             answer=true;
         }
-
+        System.out.println(a+"대"+b);
         return answer;
     }
 }
