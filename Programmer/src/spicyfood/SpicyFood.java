@@ -2,10 +2,7 @@ package spicyfood;
 
 import org.w3c.dom.ls.LSOutput;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Stream;
 
 public class SpicyFood {
@@ -21,9 +18,9 @@ public class SpicyFood {
 class Solution {
     public int solution(int[] scoville, int k) {
         int answer=0;
-        return answer;
+        PriorityQueue<Integer> queue= new PriorityQueue<>();
 
-        
+        return answer;
     }
 }
 
