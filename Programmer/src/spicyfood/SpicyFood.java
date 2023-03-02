@@ -24,7 +24,7 @@ class Solution {
             queue.add(scoville[i]);
         }
         while (queue.peek() < k) {
-            if (queue.size() == 1) { // -나오게 할려고 
+            if (queue.size() == 1) { // -나오게 할려고
                 return -1;
             }
             queue.add(queue.poll() + queue.poll() * 2);
