@@ -2,11 +2,12 @@ package printer;
 
 import java.util.Collections;
 import java.util.PriorityQueue;
+import java.util.Scanner;
 
 public class Printer {
     public static void main(String[] args) {
-        int[] priorities = {2, 1, 3, 3};
-        int location = 3;
+        int[] priorities = {2, 3, 2, 4,1,5};
+        int location = 2;
         Solution s = new Solution();
         System.out.println(s.solution(priorities, location));
 
@@ -15,18 +16,25 @@ public class Printer {
 
 class Solution {
     public int solution(int[] priorities, int location) {
-        int answer = 0;
         PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
-        int num = priorities[location];
+        int answer = 0;
+
         for (int i = 0; i < priorities.length; i++) {
             pq.add(priorities[i]);
         }
-        while (true) {
-            answer++;
-            if (num == pq.poll()) {
-                break;
-            }
-        }
+
+      while(!pq.isEmpty()){
+          for(int i=0; i<priorities.length; i++){
+              if(priorities[i]==pq.peek()){
+                  if(i==location){
+                      answer++;
+                      return answer;
+                  }
+                  pq.poll();
+                  answer++;
+              }
+          }
+      }
         return answer;
     }
 }
