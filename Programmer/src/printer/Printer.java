@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Printer {
     public static void main(String[] args) {
-        int[] priorities = {2, 3, 2, 4,1,5};
+        int[] priorities = {2, 3, 2, 4, 1, 5};
         int location = 2;
         Solution s = new Solution();
         System.out.println(s.solution(priorities, location));
@@ -23,18 +23,18 @@ class Solution {
             pq.add(priorities[i]);
         }
 
-      while(!pq.isEmpty()){
-          for(int i=0; i<priorities.length; i++){
-              if(priorities[i]==pq.peek()){
-                  if(i==location){
-                      answer++;
-                      return answer;
-                  }
-                  pq.poll();
-                  answer++;
-              }
-          }
-      }
+        while (!pq.isEmpty()) {
+            for (int i = 0; i < priorities.length; i++) {
+                if (priorities[i] == pq.peek()) {
+                    if (i == location) {
+                        answer++;
+                        return answer;
+                    }
+                    pq.poll();
+                    answer++;
+                }
+            }
+        }
         return answer;
     }
 }
