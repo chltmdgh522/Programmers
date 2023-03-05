@@ -1,8 +1,6 @@
 package maxnum;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class MaxNum {
     public static void main(String[] args) {
@@ -15,15 +13,23 @@ public class MaxNum {
 
 class Solution {
     public String solution(int[] numbers) {
-        String answer = "";
-        List<String> list=new ArrayList<>();
+        String answer="";
+        String[] num=new String[numbers.length];
         for(int i=0; i<numbers.length; i++){
-            list.add(String.valueOf(numbers[i]));
+            num[i]=String.valueOf(numbers[i]);
         }
-        list.sort(Comparator.reverseOrder());
+        Arrays.sort(num, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return (o2+o1).compareTo(o1+o2);
+            }
+        });
 
-        System.out.println(list);
-
+        if(num[0].equals("0"))
+            return "0";
+        for(String s:num){
+            answer+=s;
+        }
         return answer;
     }
 }
