@@ -18,11 +18,16 @@ class Solution {
         Queue<Integer> queue= new LinkedList<>();
 
         for(int i=0; i< truck_weights.length; i++) {
-            if (queue.size() < bridge_length) {
+            if (queue.size() ==0 | queue.) {
+                queue.add(0);
+            }
+            if(queue.size()<2){
                 queue.add(truck_weights[i]);
             }
-        }
+            if()
+            queue.remove();
 
+        }
         return answer;
     }
 }
