@@ -1,4 +1,4 @@
-package PracticeExam;
+package level1.PracticeExam;
 
 import java.util.*;
 
@@ -34,13 +34,15 @@ class Solution {
             hashMap.put(i + 1, cnt);
             cnt = 0;
         }
+
         List<Map.Entry<Integer, Integer>> sortedEntries = new ArrayList<>();
         for (Map.Entry<Integer, Integer> entry : hashMap.entrySet()) {
             if (entry.getValue() != 0) {
                 sortedEntries.add(entry);
             }
         }
-        
+
+
         Collections.sort(sortedEntries, new Comparator<Map.Entry<Integer, Integer>>() {
             public int compare(Map.Entry<Integer, Integer> o1, Map.Entry<Integer, Integer> o2) {
                 return o2.getValue().compareTo(o1.getValue());
@@ -58,6 +60,7 @@ class Solution {
             }
         }
 */
+        System.out.println(hashMap.keySet());
         int[] suPoJa = new int[list.size()];
         for (int i = 0; i < list.size(); i++) {
             suPoJa[i] = list.get(i);
