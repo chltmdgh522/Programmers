@@ -1,9 +1,6 @@
 package level1.minrectangle;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class MinRectangle {
     public static void main(String[] args) {
@@ -16,21 +13,16 @@ public class MinRectangle {
 
 class Solution {
     public int solution(int[][] sizes) {
-        int answer = 0;
-        int num = 0;
-        List<Integer> list1 = new ArrayList<>();
-        List<Integer> list2 = new ArrayList<>();
-
+        int Max_num = 0;
+        int Min_num = 0;
+        int h=0;
+        int v=0;
         for (int i = 0; i < sizes.length; i++) {
-            list1.add(sizes[i][0]);
-            list2.add(sizes[i][1]);
+            Max_num=Math.max(sizes[i][0],sizes[i][1]);
+            Min_num=Math.min(sizes[i][0],sizes[i][1]);
+            h=Math.max(Max_num,h);
+            v=Math.max(Min_num,v);
         }
-        list1.sort(Comparator.reverseOrder());
-        list2.sort(Comparator.reverseOrder());
-        if (list1.get(0) > list2.get(0)) {
-
-        }
-        System.out.println(list1.get(0));
-        return answer;
+        return h*v;
     }
 }
